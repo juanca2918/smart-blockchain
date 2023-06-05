@@ -16,16 +16,9 @@ RUN export GOROOT=/usr/local/go && \
     export PATH=$PATH:$GOROOT/bin && \
     export PATH=$PATH:/root/go/bin
 
-RUN curl https://get.ignite.com/cli | bash
-
-RUN mv ignite /usr/local/bin/
-
-COPY . /home
-
-VOLUME [ "/home" ]
+RUN curl https://get.ignite.com/cli | bash && \
+    mv ignite /usr/local/bin/ignite
 
 WORKDIR /home
 
-RUN ignite scaffold chain smart-blockchain
-
-EXPOSE 26657 26656 6060 9090 1317
+EXPOSE 26657 26656 6060 9090 1317 5173
