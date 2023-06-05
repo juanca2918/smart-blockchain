@@ -21,4 +21,4 @@ RUN curl https://get.ignite.com/cli | bash && \
 
 WORKDIR /home
 
-EXPOSE 26657 26656 6060 9090 1317 5173
+EXPOSE 26657 26656 6060 9090 1317 5173 4500
